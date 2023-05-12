@@ -1,0 +1,41 @@
+{
+  "name": "nse-quotes-api",
+  "version": "1.0.0",
+  "description": "A Yahoo API Wrapper for getting quotes from the national stock exchance (NSE) ",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devAgam/nse-quotes-api.git"
+  },
+  "keywords": [
+    "nse",
+    "yahoo",
+    "finance",
+    "api",
+    "stocks"
+  ],
+  "author": "devAgam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devAgam/nse-quotes-api/issues"
+  },
+  "homepage": "https://github.com/devAgam/nse-quotes-api#readme",
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.3",
+    "prettier": "^2.8.8",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.11"
+  }
+}
