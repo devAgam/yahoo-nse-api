@@ -4,9 +4,9 @@ import { RequestInfo, RequestInit } from "node-fetch";
 const fetch = (url: RequestInfo, init?: RequestInit) =>
   import("node-fetch").then(({ default: fetch }) => fetch(url, init));
 
-export async function getMultipleLTPs(
+export const getMultipleLTPs = async (
   symbols: string[]
-): Promise<YahooQuoteResponse> {
+): Promise<YahooQuoteResponse> => {
   const baseV6YahooFinanceURL =
     "https://query1.finance.yahoo.com/v6/finance/quote?symbols=";
   // add .NS to each symbol
@@ -16,9 +16,9 @@ export async function getMultipleLTPs(
   const response = await fetch(url);
   const json = await response.json();
   return json;
-}
+};
 
-export async function getLTP(symbol: string): Promise<YahooQuoteResult> {
+export const getLTP = async (symbol: string): Promise<YahooQuoteResult> => {
   const baseV6YahooFinanceURL =
     "https://query1.finance.yahoo.com/v6/finance/quote?symbols=";
   const symbolWithNSE = symbol + ".NS";
@@ -29,4 +29,4 @@ export async function getLTP(symbol: string): Promise<YahooQuoteResult> {
     throw new Error(`No result found for ${symbol}`);
   }
   return json.quoteResponse.result[0];
-}
+};
