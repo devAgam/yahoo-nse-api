@@ -1,6 +1,6 @@
 {
   "name": "nse-quotes-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Yahoo API Wrapper for getting quotes from the national stock exchance (NSE) ",
   "main": "src/index.js",
   "scripts": {
