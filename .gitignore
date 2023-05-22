@@ -1,2 +1,6 @@
 /node_modules
 /lib
+.idea/modules.xml
+.idea/nse-quotes-api.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
