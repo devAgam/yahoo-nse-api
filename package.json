@@ -1,5 +1,5 @@
 {
-  "name": "nse-quotes-api",
+  "name": "yahoo-nse-api",
   "version": "1.0.4",
   "description": "A Yahoo API Wrapper for getting quotes from the national stock exchance (NSE) ",
   "main": "lib/index.js",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devAgam/nse-quotes-api.git"
+    "url": "git+https://github.com/devAgam/yahoo-nse-api.git"
   },
   "keywords": [
     "nse",
@@ -25,9 +25,9 @@
   "author": "devAgam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devAgam/nse-quotes-api/issues"
+    "url": "https://github.com/devAgam/yahoo-nse-api/issues"
   },
-  "homepage": "https://github.com/devAgam/nse-quotes-api#readme",
+  "homepage": "https://github.com/devAgam/yahoo-nse-api#readme",
   "devDependencies": {
     "@types/node-fetch": "^2.6.3",
     "prettier": "^2.8.8",
