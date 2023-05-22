@@ -1,3 +1,4 @@
+import { YahooChartResponse } from "./yahoo.charts.types";
 import { YahooQuoteResponse, YahooQuoteResult } from "./yahoo.quotes.types";
 import { RequestInfo, RequestInit } from "node-fetch";
 
@@ -30,3 +31,29 @@ export const getLTP = async (symbol: string): Promise<YahooQuoteResult> => {
   }
   return json.quoteResponse.result[0];
 };
+
+export const getHistoricalData = async (
+  symbol: string,
+  interval: string,
+  range: string
+): Promise<YahooChartResponse> => {
+  validateFrame(range, "range");
+  validateFrame(interval, "interval");
+  const baseV8YahooFinanceURL =
+    "https://query1.finance.yahoo.com/v8/finance/chart/";
+  const symbolWithNSE = symbol + ".NS";
+  const url = `${baseV8YahooFinanceURL}${symbolWithNSE}?&interval=${interval}&range=${range}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
+
+function validateFrame(frame: string, frameType: string) {
+  // should begin with a number
+  // should end with either d,mo,y, or max
+  // should not contain any other characters
+  const regex = /^[0-9]+[dmy]|max$/;
+  if (!regex.test(frame)) {
+    throw new Error("Invalid" + frameType);
+  }
+}
